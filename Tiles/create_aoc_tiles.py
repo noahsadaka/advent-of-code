@@ -50,7 +50,7 @@ SESSION_COOKIE_PATH = AOC_DIR / "session.cookie"
 
 # Whether the graphic should be created for days that have not been completed yet. Note that missing days between
 # completed days will still be created.
-CREATE_ALL_DAYS = False
+CREATE_ALL_DAYS = True
 
 # ======================================================
 # === The following likely do not need to be changed ===

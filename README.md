@@ -7,6 +7,7 @@
 <h1 align="center">
   2022 - 0 ⭐
 </h1>
+<p float="left">
   <img src="Media/2022/01.png" width="161px">
   <img src="Media/2022/02.png" width="161px">
   <img src="Media/2022/03.png" width="161px">
@@ -32,4 +33,5 @@
   <img src="Media/2022/23.png" width="161px">
   <img src="Media/2022/24.png" width="161px">
   <img src="Media/2022/25.png" width="161px">
+</p>
 <!-- AOC TILES END -->

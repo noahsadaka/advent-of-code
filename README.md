@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  My Advent of Code Solutions
+  Advent of Code
 </h1>
 
 <!-- AOC TILES BEGIN -->

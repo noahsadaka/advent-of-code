@@ -7,7 +7,7 @@
 <h1 align="center">
   2022 - 0 ⭐
 </h1>
-<a href="None">
+<a href="2022/01/1.py">
   <img src="Media/2022/01.png" width="161px">
 </a>
 <a href="None">

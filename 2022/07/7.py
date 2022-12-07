@@ -6,14 +6,8 @@ def get_total_sum(d):
     total_sum = 0
     if 'totalfiles' in d.keys():
         total_sum = d['totalfiles']
-    else:
-        pass
     for k,v in d.items():
-        if k == 'totalfiles':
-            pass
-        elif k == 'sumfiles':
-            pass
-        elif isinstance(v, dict):
+        if isinstance(v, dict):
             t, _ = get_total_sum(v)
             total_sum += t
     if 'totalfiles' in d.keys():
@@ -58,7 +52,6 @@ def parse_tree(data=data):
     line_ind = 1
     folder_depth = ['/']
     lsflag = False
-    filecountchecker=0
     while line_ind < len(data):
         line = data[line_ind]
         splitted = line.split()
@@ -75,7 +68,6 @@ def parse_tree(data=data):
         if lsflag and splitted[0] != 'dir' and splitted[0] != '$':
             filesize=int(splitted[0])
             add_file_size(tree, folder_depth, filesize)
-            filecountchecker+=filesize
         line_ind +=1
     return tree
 

@@ -49,14 +49,11 @@ def scenic_score_counter(tree_array, row_ind, col_ind):
 
 def scenic_score(tree_array):
     sc = 0
-    view_array = np.zeros(tree_array.shape)
     for rowind, row in enumerate(tree_array):
         for colind, col in enumerate(row):
             sc_temp = scenic_score_counter(tree_array, rowind, colind)
-            view_array[rowind, colind] = sc_temp
             if sc_temp > sc:
                 sc = sc_temp
-    print(view_array)
     return sc
 
 matrix = parse_input()

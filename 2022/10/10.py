@@ -34,9 +34,9 @@ def draw(data=data):
     additions = get_additions(data)
     for i in additions:
         if X in range(counter-1, counter+2):
-            row += '#'
+            row += '██'
         else:
-            row += '.'
+            row += '  '
         X+=i
         counter +=1 
         if counter == 40:

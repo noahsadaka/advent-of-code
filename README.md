@@ -5,5 +5,6 @@ Example files and Python scripts for each day are found in {year}/{day}. Sometim
  No input files are present in this repo.
 
 2022: Competing in the research group leaderboard
+2021: Doing some of them for fun a year later 
 
 

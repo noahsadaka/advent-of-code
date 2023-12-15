@@ -1,4 +1,4 @@
-file= open('input', 'r') 
+file= open('example', 'r') 
 
 data = file.readlines()
 def sort_function(card):
@@ -8,27 +8,27 @@ def sort_function(card):
         return 2
     elif card == 'Q':
         return 3
-    elif card == 'J':
-        return 4
     elif card == 'T':
-        return 5
+        return 4
     elif card == '9':
-        return 6
+        return 5
     elif card == '8':
-        return 7
+        return 6
     elif card == '7':
-        return 8
+        return 7
     elif card == '6':
-        return 9
+        return 8
     elif card == '5':
-        return 10
+        return 9
     elif card == '4':
-        return 11
+        return 10
     elif card == '3':
-        return 12
+        return 11
     elif card == '2':
-        return 13
+        return 12
     elif card == '1':
+        return 13
+    elif card == 'J':
         return 14
 
 def compare_two_cards(card1, card2):
@@ -68,6 +68,45 @@ def scoring(rank, summation, cardbidlist):
             summation += rank * bid
             rank += 1
     return rank, summation, cardbidlist
+
+def handsorter(card_bid):
+    card = card_bid.split()[0]
+    card = sorted(card)
+    if 'J' not in card:
+        if card[0] == card[1] == card[2] == card[3] == card[4]:
+            return '5'
+        elif card[0] == card[1] == card[2] == card[3] or card[1] == card[2] == card[3] == card[4]:
+            return '4'
+        elif card[0] == card[1] == card[2]:
+            if card[3] == card[4]:
+                return 'fh'
+            else:
+                return 'th'
+        elif card[2] == card[3] == card[4]:
+            if card[0] == card[1]:
+                return 'fh'
+            else:
+                return 'th'
+        elif card[1] == card[2] == card[3]:
+            if card[0] == card[4]:
+                return 'fh'
+            else:
+                return 'th'
+        elif card[0] != card[1] != card[2] != card[3] != card[4]:
+            return 'hc'
+        elif len(set(card)) == 4:
+            return '1'
+        else:
+            return '2'
+    else:
+        # five of a kind
+        if len(set(card)) == 2:
+            return '5'
+        # one pair
+        elif len(set(card)) == 4:
+            return '1'
+        #  
+
 # Data storage for each type of hand
 fi_oak = [] # done
 fo_oak = [] # done
@@ -81,8 +120,10 @@ high_c = [] # done
 for line in data:
     cur_line = line.split('\n')[0]
     card = sorted(cur_line.split()[0])
-    if card[0] == card[1] == card[2] == card[3] == card[4]:
+    # Five of a kind
+    if len(set(card)) == 1 or (len(set(card)) == 2 and 'J' in card):
         fi_oak.append(cur_line)
+    # four of a kind
     elif card[0] == card[1] == card[2] == card[3]:
         fo_oak.append(cur_line)
     elif card[1] == card[2] == card[3] == card[4]:
